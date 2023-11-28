@@ -1,0 +1,13 @@
+.not-found-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  background-size: cover;
+}
+
+.not-found-logo {
+  width: 300px;
+  height: 400px;
+}

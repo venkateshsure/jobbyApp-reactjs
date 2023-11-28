@@ -1,0 +1,68 @@
+.list-container {
+  text-decoration: none;
+  outline: none;
+}
+
+.get-job-details-li-con {
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+.company-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.get-job-details-logo-text-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.get-job-details-title-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.star-con {
+  color: #fbbf24;
+}
+
+.location-employment-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+}
+
+.hor {
+  width: 100%;
+}
+
+.hor-con {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.jobDescription-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

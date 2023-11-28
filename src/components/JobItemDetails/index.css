@@ -1,0 +1,260 @@
+.job-item-details-con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  min-height: 100vh;
+}
+
+.job-details-main-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.render-success-header-con {
+  background-color: #64748b;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  min-height: 100vh;
+  margin-top: 30px;
+}
+
+.job-item-fir-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.job-item-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.job-details-sec-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 5px;
+  min-height: 8vh;
+}
+
+.job-details-thi-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.job-details-title-con {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+
+.job-details-star-logo {
+  color: #fbbf24;
+}
+
+.job-details-employment-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.job-details-employment-fir-con {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-details-location {
+  display: flex;
+  flex-direction: row;
+  width: 13%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-details-internship {
+  display: flex;
+  flex-direction: row;
+  width: 22%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-details-package {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 17px;
+}
+
+.job-details-hr-con {
+  color: #ffffff;
+  width: 100%;
+}
+
+.job-details-description-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.job-details-description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.job-description-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.job-details-anchor {
+  cursor: pointer;
+}
+
+.skill-head-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.skill-con {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.life-at-company-head-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.life-at-company-con {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.life-at-company-para {
+  width: 60%;
+  color: #ffffff;
+  font-family: 'Roboto';
+}
+
+.life-at-company-img {
+  width: 500px;
+  height: 300px;
+}
+
+.description {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: 'Roboto';
+}
+
+.similar-jobs-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+.similar-jobs-head-con {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.each-similar-jobs-con {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.similar-jobs-each-main-con {
+  background-color: #64748b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  list-style-type: none;
+  width: 50%;
+}
+
+.similar-jobs-image {
+  width: 50px;
+  height: 50px;
+}
+
+.similar-jobs-description-con {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.similar-jobs-loc-int-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.similar-jobs-location {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.similar-jobs-internship {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+}
