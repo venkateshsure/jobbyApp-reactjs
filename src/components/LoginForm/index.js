@@ -92,22 +92,20 @@ class LoginForm extends Component {
 
     return (
       <div className="con">
-        <div className="fir-con">
-          <form className="form-con" onSubmit={this.submitForm}>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              alt="website logo"
-              className="login-website-logo"
-            />
-            <div className="input-con">{this.renderUsername()}</div>
-            <div className="input-con">{this.renderPassword()}</div>
+        <form className="form-con" onSubmit={this.submitForm}>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+            className="login-website-logo"
+          />
+          <div className="input-con">{this.renderUsername()}</div>
+          <div className="input-con">{this.renderPassword()}</div>
 
-            <button type="submit" className="login-button">
-              Login
-            </button>
-            {showSubmitError && <p className="invalid-para">{errorMessage}*</p>}
-          </form>
-        </div>
+          <button type="submit" className="login-button">
+            Login
+          </button>
+          {showSubmitError && <p className="invalid-para">{errorMessage}*</p>}
+        </form>
       </div>
     )
   }

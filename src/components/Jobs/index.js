@@ -189,7 +189,7 @@ class Jobs extends Component {
   clickSearchIcon = event => {
     console.log(event)
     if (event.type === 'click') {
-      // event.type is used for "onClick" event listener
+      // event.type is used for "onClick" event listener for elements
       this.getJobDetails()
     }
   }

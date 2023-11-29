@@ -2,19 +2,17 @@
   background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
   height: 100vh;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .home-text-con {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.home-text-sec-con {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  height: 50vh;
+  width: 90%;
+  padding-left: 40px;
 }
 
 .home-head {
