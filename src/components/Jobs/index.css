@@ -23,7 +23,6 @@
   width: 30%;
   height: 100vh;
   flex-shrink: 0;
-  background-color: pink;
 }
 
 .job-details-head-con {
@@ -32,7 +31,6 @@
   justify-content: center;
   width: 80%;
   min-height: 90vh;
-  background-color: red;
 }
 
 .loader-container {
