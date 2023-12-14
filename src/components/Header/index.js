@@ -1,6 +1,10 @@
 import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
+import {FiLogOut} from 'react-icons/fi'
+import {AiFillHome} from 'react-icons/ai'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
+
 import './index.css'
 
 const Header = props => {
@@ -10,31 +14,67 @@ const Header = props => {
     history.replace('/login')
   }
   return (
-    <div className="head-main-con">
-      <ul className="header-con">
-        <Link to="/">
-          <li className="para">
+    <nav className="nav-header">
+      <div className="nav-content">
+        <div className="nav-bar-mobile-logo-con">
+          <Link to="/">
             <img
               src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
               alt="website logo"
-              className="header-website-logo"
+              className="website-logo"
             />
-          </li>
-        </Link>
-        <ul className="header-link-con">
-          <Link className="nav-item" to="/">
-            <li className="para">Home</li>
           </Link>
-          <Link className="nav-item" to="/jobs">
-            <li className="para">Jobs</li>
+          <ul className="nav-bar-mobile-icons-con">
+            <li>
+              <Link to="/">
+                <AiFillHome className="nav-item-mobile-link" />
+              </Link>
+            </li>
+            <li>
+              <Link to="/jobs">
+                <BsFillBriefcaseFill className="nav-item-mobile-link" />
+              </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                className="nav-mobile-btn"
+                onClick={onClickLogout}
+                aria-label="Logout"
+              >
+                <FiLogOut />
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div className="nav-bar-large-con">
+          <Link to="/">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+              className="website-logo"
+            />
           </Link>
-        </ul>
+          <ul className="nav-menu">
+            <li className="nav-menu-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
 
-        <button className="header-button" type="button" onClick={onClickLogout}>
-          Logout
-        </button>
-      </ul>
-    </div>
+            <li className="nav-menu-item">
+              <Link className="nav-link" to="/jobs">
+                Jobs
+              </Link>
+            </li>
+          </ul>
+
+          <button className="logout-btn" type="button" onClick={onClickLogout}>
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
   )
 }
 

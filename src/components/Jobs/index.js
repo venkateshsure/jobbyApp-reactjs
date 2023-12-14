@@ -9,6 +9,7 @@ import TypeOfEmployment from '../TypeOfEmployment'
 import SalaryRange from '../SalaryRange'
 
 import GetJobDetails from '../GetJobDetails'
+import ProfileDetails from '../ProfileDetails'
 
 import './index.css'
 
@@ -61,7 +62,6 @@ class Jobs extends Component {
   state = {
     jobStatus: apiStatus.initial,
     status: apiStatus.initial,
-    profileDetails: {},
     jobs: [],
     jobsEmploymentType: [],
     salary: '',
@@ -69,7 +69,6 @@ class Jobs extends Component {
   }
 
   componentDidMount() {
-    this.getProducts()
     this.getJobDetails()
   }
 
@@ -108,56 +107,6 @@ class Jobs extends Component {
       this.setState({jobStatus: apiStatus.failure})
     }
   }
-
-  getProducts = async () => {
-    this.setState({status: apiStatus.inProgress})
-
-    const profileUrl = 'https://apis.ccbp.in/profile'
-    const token = Cookies.get('jwt_token')
-
-    const options = {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-    const response = await fetch(profileUrl, options)
-    if (response.ok === true) {
-      const data = await response.json()
-      const profileData = {
-        name: data.profile_details.name,
-        profileImageUrl: data.profile_details.profile_image_url,
-        shortBio: data.profile_details.short_bio,
-      }
-      this.setState({status: apiStatus.success, profileDetails: profileData})
-    } else {
-      this.setState({status: apiStatus.failure})
-    }
-  }
-
-  renderSuccess = () => {
-    const {profileDetails} = this.state
-    const {name, profileImageUrl, shortBio} = profileDetails
-    return (
-      <div className="jobs-profile">
-        <img src={profileImageUrl} alt="profile" />
-        <h1>{name}</h1>
-        <p>{shortBio}</p>
-      </div>
-    )
-  }
-
-  renderFailure = () => (
-    <button onClick={this.getProducts} className="retry-button" type="button">
-      Retry
-    </button>
-  )
-
-  renderLoading = () => (
-    <div className="loader-container" data-testid="loader">
-      <Loader type="ThreeDots" color="#ffffff" height="50" width={50} />
-    </div>
-  )
 
   onSelectSalaryRange = value => {
     this.setState({salary: value}, this.getJobDetails)
@@ -294,7 +243,7 @@ class Jobs extends Component {
           <div className="head-con">
             <div className="jobs-con">
               <div className="jobs-header-con">
-                <div className="render-profile-con">{this.renderProfile()}</div>
+                <ProfileDetails />
 
                 <div className="hor-con">
                   <hr className="hor" />

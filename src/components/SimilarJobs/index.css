@@ -1,24 +1,27 @@
-.link-item {
-  text-decoration: none;
-}
-
-.job-item {
+.similar-job-item {
   display: flex;
+  list-style-type: none;
   flex-direction: column;
   background-color: #202020;
-  margin-top: 10px;
-  margin-bottom: 25px;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin-top: 10px;
 }
 
-.logo-title-loc-con {
-  display: flex;
+@media screen and (min-width: 768px) {
+  .similar-job-item {
+    width: 350px;
+    margin-right: 20px;
+  }
+}
 
+.logo-title-location-container {
+  display: flex;
   flex-direction: column;
 }
 
-.logo-title-con {
+.logo-title-container {
   display: flex;
   align-items: center;
 }
@@ -29,7 +32,7 @@
   margin-right: 20px;
 }
 
-.title-rating-con {
+.title-rating-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,17 +43,17 @@
   font-size: 20px;
   font-weight: bold;
   font-family: 'Roboto';
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
-.rating-con {
+.rating-container {
   display: flex;
   align-items: center;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .rating-icon {
-  color: #fbbb24;
+  color: #fbbf24;
   font-size: 18px;
   margin-right: 10px;
 }
@@ -62,21 +65,13 @@
   font-family: 'Roboto';
 }
 
-.location-package-con {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.location-employee-con {
+.location-employee-container {
   display: flex;
   flex-direction: row;
 }
 
-.location-con {
+.location-container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin-right: 10px;
   padding-left: 5px;
@@ -84,11 +79,11 @@
 
 .location-icon {
   color: #ffffff;
-  font-size: 22px;
-  margin-right: 10px;
+  font-size: 20px;
+  margin-right: 6px;
 }
 
-.brief-case-icon {
+.breif-case-icon {
   color: #ffffff;
   font-size: 22px;
   margin-right: 10px;
@@ -96,19 +91,11 @@
 
 .location-heading {
   color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 14px;
   font-family: 'Roboto';
 }
 
-.package-heading {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: 'Roboto';
-}
-
-.employee-type-con {
+.employee-type-container {
   display: flex;
   align-items: center;
   padding-left: 5px;
@@ -116,27 +103,13 @@
 
 .employee-type-heading {
   color: #ffffff;
-  font-size: 140px;
-  font-weight: bold;
-  font-family: 'Roboto';
-}
-
-.line {
-  color: #7e858e;
-  width: 100%;
-}
-
-.description-heading {
-  color: #ffffff;
   font-size: 20px;
-  font-weight: bold;
   font-family: 'Roboto';
-  margin-bottom: 0px;
+  font-weight: bold;
 }
 
 .description-text {
   color: #ffffff;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 14px;
   font-family: 'Roboto';
 }

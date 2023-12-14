@@ -1,7 +1,8 @@
 import {Link} from 'react-router-dom'
 
 import {IoLocationOutline} from 'react-icons/io5'
-import {FaShoppingBag, FaRegStar} from 'react-icons/fa'
+import {FaRegStar} from 'react-icons/fa'
+import {BsFillBriefcaseFill} from 'react-icons/bs'
 
 import './index.css'
 
@@ -18,41 +19,43 @@ const GetJobDetails = props => {
     title,
   } = each
   return (
-    <Link className="list-container" to={`/jobs/${id}`}>
-      <li className="get-job-details-li-con">
-        <div className="get-job-details-logo-text-con">
-          <img
-            src={companyLogoUrl}
-            alt="job details company logo"
-            className="company-logo"
-          />
-          <div className="get-job-details-title-rating">
-            <h1>{title}</h1>
-            <FaRegStar className="star-con" />
-            <p>{rating}</p>
+    <Link className="link-item" to={`/jobs/${id}`}>
+      <li className="job-item">
+        <div className="logo-title-loc-con">
+          <div className="logo-title-con">
+            <img
+              src={companyLogoUrl}
+              alt="job details company logo"
+              className="company-logo"
+            />
+            <div className="title-rating-con">
+              <h1 className="title-heading">{title}</h1>
+              <div className="rating-con">
+                <FaRegStar className="rating-icon" />
+                <p className="rating-heading">{rating}</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="location-employment-con">
-          <div className="location">
-            <IoLocationOutline />
-            <p>{location}</p>
-          </div>
-          <div className="location">
-            <FaShoppingBag />
-            <p>{employmentType}</p>
-          </div>
+          <div className="location-package-con">
+            <div className="location-employee-con">
+              <div className="location-con">
+                <IoLocationOutline className="location-icon" />
+                <p className="location-heading">{location}</p>
+              </div>
+              <div className="employee-type-con">
+                <BsFillBriefcaseFill className="brief-case-icon" />
+                <p className="employee-type-heading">{employmentType}</p>
+              </div>
+            </div>
 
-          <div className="location">
-            <p>{packagePerAnnum}</p>
+            <p className="package-heading">{packagePerAnnum}</p>
           </div>
         </div>
-        <div className="hor-con">
-          <hr className="hor" />
-        </div>
-        <div className="jobDescription-con">
-          <h1>Description</h1>
-          <p>{jobDescription}</p>
-        </div>
+
+        <hr className="line" />
+
+        <h1 className="description-heading">Description</h1>
+        <p className="description-text">{jobDescription}</p>
       </li>
     </Link>
   )
