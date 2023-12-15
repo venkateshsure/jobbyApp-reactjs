@@ -58,8 +58,6 @@ class JobItemDetails extends Component {
         lifeAtCompany: data.job_details.life_at_company,
       }
 
-      console.log(fetchedJobDetails)
-
       const fetchedSimilarJobs = data.similar_jobs.map(each => ({
         similarJobsCompanyLogoUrl: each.company_logo_url,
         similarJobsEmploymentType: each.employment_type,
@@ -70,7 +68,6 @@ class JobItemDetails extends Component {
         similarJobsTitle: each.title,
       }))
 
-      console.log(fetchedSimilarJobs)
       this.setState({
         status: apiStatus.success,
         similarJobs: fetchedSimilarJobs,
@@ -88,7 +85,6 @@ class JobItemDetails extends Component {
       companyLogoUrl,
       companyWebsiteUrl,
       employmentType,
-      id,
       location,
       jobDescription,
       packagePerAnnum,
@@ -97,7 +93,6 @@ class JobItemDetails extends Component {
       skills,
       lifeAtCompany,
     } = jobDetails
-    console.log(skills)
 
     return (
       <>

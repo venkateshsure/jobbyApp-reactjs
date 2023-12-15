@@ -61,7 +61,6 @@ const employmentTypesList = [
 class Jobs extends Component {
   state = {
     jobStatus: apiStatus.initial,
-    status: apiStatus.initial,
     jobs: [],
     jobsEmploymentType: [],
     salary: '',
@@ -76,6 +75,7 @@ class Jobs extends Component {
     this.setState({jobStatus: apiStatus.inProgress})
     const token = Cookies.get('jwt_token')
     const {jobsEmploymentType, salary, searchInput} = this.state
+    console.log(jobsEmploymentType)
 
     const jobsApiUrl = `https://apis.ccbp.in/jobs?employment_type=${jobsEmploymentType.join(
       ',',
@@ -112,20 +112,6 @@ class Jobs extends Component {
     this.setState({salary: value}, this.getJobDetails)
   }
 
-  renderProfile = () => {
-    const {status} = this.state
-    switch (status) {
-      case apiStatus.success:
-        return this.renderSuccess()
-      case apiStatus.failure:
-        return this.renderFailure()
-      case apiStatus.inProgress:
-        return this.renderLoading()
-      default:
-        return null
-    }
-  }
-
   onSearchInput = event => this.setState({searchInput: event.target.value})
 
   onSearchEnter = event => {
@@ -143,11 +129,22 @@ class Jobs extends Component {
     }
   }
 
+  selectedEmployment = value => {
+    const {jobsEmploymentType} = this.state
+    const index = jobsEmploymentType.indexOf(value)
+    if (index !== -1) {
+      jobsEmploymentType.splice(index, 1)
+    } else {
+      jobsEmploymentType.push(value)
+    }
+    this.setState({jobsEmploymentType}, this.getJobDetails)
+  }
+
   onRenderJobsSuccess = () => {
     const {jobs, searchInput} = this.state
     return (
       <div className="success-con">
-        <div className="search-con">
+        <div className="search-input-con">
           <input
             placeholder="search"
             type="search"
@@ -157,14 +154,7 @@ class Jobs extends Component {
             onKeyDown={this.onSearchEnter}
           />
 
-          <button
-            className="search-icon-button"
-            type="button"
-            data-testid="searchButton"
-            aria-label="Search Jobs" // Add an aria-label to describe the button for accessibility
-          >
-            <BsSearch onClick={this.clickSearchIcon} className="search-icon" />
-          </button>
+          <BsSearch onClick={this.clickSearchIcon} className="search-icon" />
         </div>
         <ul className="get-job-details-ul-con">
           {jobs.length === 0 ? (
@@ -226,13 +216,6 @@ class Jobs extends Component {
       default:
         return null
     }
-  }
-
-  selectedEmployment = value => {
-    this.setState(
-      pre => ({jobsEmploymentType: [...pre.jobsEmploymentType, value]}),
-      this.getJobDetails,
-    )
   }
 
   render() {
