@@ -65,6 +65,7 @@ class Jobs extends Component {
     jobsEmploymentType: [],
     salary: '',
     searchInput: '',
+    selectedSalaryRange: '',
   }
 
   componentDidMount() {
@@ -109,7 +110,13 @@ class Jobs extends Component {
   }
 
   onSelectSalaryRange = value => {
-    this.setState({salary: value}, this.getJobDetails)
+    this.setState(
+      pre => ({
+        salary: value,
+        selectedSalaryRange: pre.selectedSalaryRange === value ? '' : value,
+      }),
+      this.getJobDetails,
+    )
   }
 
   onSearchInput = event => this.setState({searchInput: event.target.value})
@@ -219,6 +226,7 @@ class Jobs extends Component {
   }
 
   render() {
+    const {selectedSalaryRange} = this.state
     return (
       <>
         <Header />
@@ -253,6 +261,7 @@ class Jobs extends Component {
                       onSelectSalaryRange={this.onSelectSalaryRange}
                       each={each}
                       key={each.salaryRangeId}
+                      isChecked={selectedSalaryRange === each.salaryRangeId}
                     />
                   ))}
                 </ul>

@@ -1,7 +1,7 @@
 import './index.css'
 
 const SalaryRange = props => {
-  const {each, onSelectSalaryRange} = props
+  const {each, onSelectSalaryRange, isChecked} = props
   const {salaryRangeId, label} = each
 
   const onChangeSalary = event => {
@@ -15,6 +15,7 @@ const SalaryRange = props => {
         type="radio"
         name="salaryRange"
         id={salaryRangeId}
+        checked={isChecked}
       />
       <label className="label-text" htmlFor={salaryRangeId}>
         {label}
